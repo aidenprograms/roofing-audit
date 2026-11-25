@@ -9,20 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* VOICE: plain and specific, the way a good roofer talks to a homeowner.
-   IDEA: a job folder. Clean white sheets, one strong orange used only for actions and the one number that matters.
-   PICTURE: the working audit card in the first screen; the samples carousel is the proof of craft.
-   COLOUR and TYPE: white and steel grey grounds, near-black ink, one work-truck orange. Archivo Heavy headings, Public Sans text.
-   LAYOUT: 1100px container, spacing scale 4/8/16/24/40/72/96 only, hero splits copy and audit, everything else one calm column. */
 :root{color-scheme:light;
---bg:#ffffff;--steel:#f1f3f4;--line:#d9dee2;--ink:#14181b;--muted:#4f5a62;--soft:#6b767e;
---accent:#d9541e;--accent-dark:#b14313;--accent-ink:#a8410f;--tint:#fcefe8;--night:#14181b;--night-2:#232a30;
---s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:72px;--s7:96px;--r:10px}
+--bg:#fffefa;--steel:#f3f1ea;--line:#d1d0c8;--ink:#242722;--muted:#4f554e;--soft:#5d645c;
+--accent:#aa4022;--accent-dark:#853117;--accent-ink:#9d381b;--tint:#fcefe8;--night:#252b25;--night-2:#232a30;
+--s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:72px;--s7:96px;--r:3px}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:var(--s5)}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Public Sans",system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:800;letter-spacing:-.015em;line-height:1.08;text-wrap:balance;margin:0}
-h1{font-size:clamp(34px,4.6vw,54px)}
+h1{font:normal clamp(44px,5vw,72px)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.052em;text-wrap:pretty}
 h2{font-size:clamp(28px,3.2vw,38px)}
 h3{font-size:20px;line-height:1.25}
 p{margin:0}
@@ -33,7 +28,7 @@ a{color:var(--accent-ink)}
 [tabindex="-1"]:focus{outline:none}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:52px;padding:0 var(--s4);border:0;border-radius:8px;
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:52px;padding:0 var(--s4);border:0;border-radius:3px;
   font:700 17px "Public Sans",system-ui,sans-serif;text-decoration:none;cursor:pointer;background:var(--accent);color:#fff;
   transition:background-color .15s,transform .08s}
 .btn:hover{background:var(--accent-dark)}
@@ -59,13 +54,13 @@ a{color:var(--accent-ink)}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:var(--s6);align-items:start}
 .hero h1{margin-bottom:var(--s4)}
 .lede{font-size:19px;color:var(--muted);max-width:34ch}
-.facts{list-style:none;margin:var(--s5) 0 0;padding:0;display:grid;gap:var(--s3)}
-.facts li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:var(--s3);align-items:start;font-weight:500}
-.facts svg{margin-top:3px}
-
+.hero .lede{max-width:38ch}
+.audit-label{display:flex;align-items:center;gap:12px;color:var(--accent-ink);font-weight:700;font-size:16px;margin-bottom:22px}
+.audit-label::before{content:"";width:32px;height:3px;background:currentColor}
+.hero-note{color:var(--soft);font-size:15px;margin-top:24px}
 /* audit card */
 .card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:var(--s5)}
-.audit{box-shadow:0 1px 2px rgba(20,24,27,.06),0 12px 32px -16px rgba(20,24,27,.18)}
+.audit{background:#fff;border-top:3px solid var(--ink);padding:clamp(20px,3vw,36px)}
 .top{display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s4);font-size:15px;color:var(--soft);min-height:44px}
 .back{background:none;border:0;padding:0;font:600 15px "Public Sans",sans-serif;color:var(--muted);cursor:pointer;min-height:44px;min-width:44px;text-align:left}
 .back:hover{color:var(--ink)}
@@ -73,9 +68,9 @@ a{color:var(--accent-ink)}
 .bar{flex:1;height:4px;background:var(--steel);border-radius:2px;overflow:hidden}
 .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s ease}
 .q{font-size:clamp(22px,2.4vw,26px);margin-bottom:var(--s4)}
-.opts{display:grid;gap:var(--s2)}
-.opt{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);min-height:56px;padding:0 var(--s3);border:1px solid var(--line);border-radius:8px;
-  background:var(--bg);color:var(--ink);font:500 16px/1.3 "Public Sans",system-ui,sans-serif;text-align:left;cursor:pointer;transition:border-color .12s,background-color .12s}
+.opts{display:grid;border-top:1px solid var(--line)}
+.opt{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);min-height:56px;padding:0 var(--s3);border:0;border-bottom:1px solid var(--line);border-radius:0;
+  background:transparent;color:var(--ink);font:500 16px/1.3 "Public Sans",system-ui,sans-serif;text-align:left;cursor:pointer;transition:border-color .12s,background-color .12s}
 .opt:hover{border-color:var(--ink);background:var(--steel)}
 .opt[aria-pressed=true]{border-color:var(--accent);background:var(--tint);box-shadow:inset 0 0 0 1px var(--accent)}
 .opt .tick{flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg)}
@@ -84,7 +79,7 @@ a{color:var(--accent-ink)}
 .mt{margin-top:var(--s4)}
 
 /* report */
-.cost{background:var(--night);color:#fff;border-radius:8px;padding:var(--s4)}
+.cost{background:var(--night);color:#fff;border-radius:3px;padding:var(--s4)}
 .cost .lab{font-size:15px;color:#b8c1c7}
 .cost .big{font:800 clamp(36px,5vw,52px)/1.05 Archivo,sans-serif;letter-spacing:-.02em;margin:var(--s2) 0;white-space:nowrap}
 .cost .sub{color:#e6eaec}
@@ -101,7 +96,7 @@ details.math summary{cursor:pointer;font-size:14px;color:#b8c1c7;min-height:44px
 .meter i{display:block;height:100%;width:0;background:var(--ink);border-radius:4px;transition:width .6s ease}
 .g.weak b,.g.weak .n{color:var(--accent-ink)}
 .g.weak .meter i{background:var(--accent)}
-.fix{background:var(--tint);border-radius:8px;padding:var(--s4)}
+.fix{background:var(--tint);border-radius:3px;padding:var(--s4)}
 .fix .lab{font-weight:700;color:var(--accent-ink);font-size:15px;margin-bottom:var(--s1)}
 .fix p{font-size:18px;font-weight:600;line-height:1.45}
 .next{margin-top:var(--s5);padding-top:var(--s5);border-top:1px solid var(--line)}
@@ -112,7 +107,7 @@ details.math summary{cursor:pointer;font-size:14px;color:#b8c1c7;min-height:44px
 .link{background:none;border:0;padding:0;font:600 16px "Public Sans",sans-serif;color:var(--accent-ink);text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:44px}
 .mail{margin-top:var(--s3)}
 .mail .row{display:grid;gap:var(--s2);grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));margin-bottom:var(--s2)}
-input{font:16px "Public Sans",system-ui,sans-serif;min-height:50px;padding:0 var(--s3);border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+input{font:16px "Public Sans",system-ui,sans-serif;min-height:50px;padding:0 var(--s3);border:1px solid var(--line);border-radius:3px;background:var(--bg);color:var(--ink);width:100%}
 input:focus{border-color:var(--ink);outline:none;box-shadow:0 0 0 3px var(--tint)}
 .err{font-size:14px;color:#a3221a;min-height:20px;margin-bottom:var(--s2)}
 .note{font-size:14px;color:var(--soft)}
@@ -127,31 +122,21 @@ input:focus{border-color:var(--ink);outline:none;box-shadow:0 0 0 3px var(--tint
 .list h3{margin-bottom:var(--s1)}
 .list p{color:var(--muted)}
 
-/* carousel */
-.carousel-head{max-width:800px;margin:0 auto var(--s5);text-align:center}
-.carousel-head p{color:var(--muted);margin-top:var(--s3)}
-.carousel{max-width:800px;margin:0 auto}
-.viewport{overflow:hidden;touch-action:pan-y;border-radius:var(--r)}
-.track{display:flex;transition:transform .3s ease}
-.slide{flex:0 0 100%;display:flex}
-.slide .card{width:100%;background:var(--bg);border:1px solid var(--line)}
-.slide .kind{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);justify-content:space-between;font-size:15px;color:var(--soft);margin-bottom:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
-.slide .kind b{color:var(--ink);font-weight:700}
-.copy{font-size:22px;line-height:1.55;color:var(--ink)}
-.copy strong{font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-.01em}
-.copy p+p{margin-top:var(--s3)}
-.copy .smalltxt{font-size:17px;color:var(--muted)}
-.controls{display:flex;align-items:center;justify-content:center;gap:var(--s3);margin-top:var(--s4)}
-.arrow{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background-color .15s,border-color .15s}
-.arrow:hover{border-color:var(--ink)}
-.arrow[aria-disabled=true]{color:var(--line);border-color:var(--line);cursor:default;background:var(--bg)}
-.count{min-width:4.5em;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
-.dots{display:flex;justify-content:center;gap:0;margin-top:var(--s2)}
-.dot{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;cursor:pointer;padding:0}
-.dot span{width:10px;height:10px;border-radius:50%;background:var(--line);transition:all .2s}
-.dot:hover span{background:var(--soft)}
-.dot[aria-current=true] span{width:28px;border-radius:5px;background:var(--ink);box-shadow:0 0 0 2px var(--bg),0 0 0 3px var(--ink)}
-
+/* Testimonials */
+.testimonials{background:#eeeee5;border-block:1px solid #c8cabe}
+.testimonials .wrap{display:grid;grid-template-columns:minmax(190px,.65fr) minmax(0,1.65fr);gap:clamp(32px,7vw,92px)}
+.testimonials h2{font-size:clamp(27px,3vw,38px)}
+.viewport{overflow:hidden;touch-action:pan-y pinch-zoom}
+.track{display:flex;transition:transform .32s ease}
+.slide{flex:0 0 100%;margin:0;display:flex;flex-direction:column;align-items:flex-start}
+.slide blockquote{margin:0;font:normal clamp(23px,2.45vw,34px)/1.32 Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+.slide figcaption{margin-top:22px;font-weight:700;font-size:16px}
+.slide figcaption::before{content:"";display:inline-block;width:22px;height:2px;background:var(--accent);vertical-align:middle;margin-right:10px}
+.controls{display:flex;align-items:center;gap:8px;border-top:1px solid #b9beb2;margin-top:24px;padding-top:12px}
+.count{margin-right:auto;color:var(--muted);font-size:15px;font-variant-numeric:tabular-nums}
+.arrow{width:46px;height:44px;display:grid;place-items:center;color:var(--ink);border:1px solid #a6ad9e;border-radius:3px;background:transparent;font:24px/1 Arial,sans-serif;cursor:pointer}
+.arrow:hover{background:var(--bg);border-color:var(--ink)}
+.arrow[aria-disabled=true]{opacity:.35;cursor:default;background:transparent}
 /* closing */
 .closing{background:var(--night);color:#fff;padding:var(--s6) 0}
 .closing .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap}
@@ -163,16 +148,24 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
 
 @media(max-width:860px){
   .hero .wrap,.split{grid-template-columns:minmax(0,1fr);gap:var(--s5)}
-  .lede{max-width:none}
+  .lede{max-width:48ch}
 }
 @media(max-width:600px){
   .wrap{padding:0 var(--s3)}
   .hero{padding:var(--s5) 0 var(--s6)}
   .band{padding:var(--s5) 0}
   .card{padding:var(--s4)}
-  .copy{font-size:18px}
-  .copy .smalltxt{font-size:16px}
-  .nav nav a.plain{display:none}
+  .nav .wrap{gap:8px;min-height:64px}
+  .nav nav{gap:10px}
+  .nav nav a.plain{font-size:14px}
+  .nav nav a[href="#call"]{display:none}
+  .nav .btn{padding:0 10px;font-size:14px}
+  .brand{font-size:16px}
+  .testimonials .wrap{grid-template-columns:minmax(0,1fr);gap:22px}
+  .hero-note{margin-top:14px}
+  .hero .wrap{gap:26px}
+  .cost .big{white-space:normal;font-size:clamp(27px,7.6vw,42px)}
+  footer .wrap{overflow-wrap:anywhere}
   .brand span{display:none}
   .closing{padding:var(--s5) 0}
   .g{grid-template-columns:5.5em minmax(0,1fr) 2.6em;gap:var(--s2)}
@@ -190,7 +183,7 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
   <div class="wrap">
     <a class="brand" href="#">Aiden McBroom<span>Website copy for roofing companies</span></a>
     <nav aria-label="Main">
-      <a class="plain" href="#samples">Samples</a>
+      <a class="plain" href="#testimonials">Testimonials</a>
       <a class="plain" href="#call">The free call</a>
       <a class="btn small" href="https://calendly.com/aidenmcbroom-college/roofing-discovery-call" target="_top">Book a call</a>
     </nav>
@@ -201,13 +194,10 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
 <section class="hero">
   <div class="wrap">
     <div>
-      <h1>Find out how many roof jobs your website is losing</h1>
-      <p class="lede">Answer 9 quick questions. You'll see how your site grades, what the gaps may cost you each year, and the first thing to fix.</p>
-      <ul class="facts">
-        <li><svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>Free, and the results show on screen</li>
-        <li><svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>About 90 seconds, one tap per question</li>
-        <li><svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>Built for independent roofing companies</li>
-      </ul>
+      <p class="audit-label">Free roofing website audit</p>
+      <h1>Would a homeowner call you for an estimate?</h1>
+      <p class="lede">Answer nine questions about your website and how you follow up. You’ll get a score, an estimate of what missed jobs could be worth, and one thing to fix first.</p>
+      <p class="hero-note">About 90 seconds · Results on screen</p>
     </div>
     <div class="card audit" id="audit">
       <div class="top"><button type="button" class="back" id="back" hidden>← Back</button><div class="bar" aria-hidden="true"><i id="prog"></i></div><span id="step">1 of 9</span></div>
@@ -216,23 +206,40 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
   </div>
 </section>
 
-<section class="band steel" id="samples" aria-roledescription="carousel" aria-labelledby="samples-h">
+<section class="band testimonials" id="testimonials" aria-roledescription="carousel" aria-labelledby="testimonials-title">
   <div class="wrap">
-    <div class="carousel-head">
-      <h2 id="samples-h">Writing samples</h2>
-      <p>Five short pieces of the kind I write for roofers, from headlines to the text a homeowner gets after a missed call. They're written for made-up companies.</p>
-    </div>
+    <h2 id="testimonials-title">Testimonials</h2>
     <div class="carousel">
       <div class="viewport" id="vp">
-        <div class="track" id="track"></div>
+        <div class="track" id="track">
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+            <blockquote>“We wanted more replacement jobs, but our website barely explained that side of the business. Aiden rewrote that page around the questions homeowners ask before getting an estimate. Since then, more of our website inquiries have been about replacements. Those are the appointments I wanted on the calendar.”</blockquote>
+            <figcaption>Mike H.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="2 of 5" aria-hidden="true" inert>
+            <blockquote>“I figured we needed to scrap the website and start over. Aiden pointed out that people couldn’t easily tell where we worked or how to request an estimate. He rewrote the pages we already had. We kept the design, and customers stopped calling to ask whether we served their town.”</blockquote>
+            <figcaption>Chris D.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="3 of 5" aria-hidden="true" inert>
+            <blockquote>“A customer told me she called us because the website explained how we decide whether a roof needs repairing or replacing. She was worried somebody would sell her a roof she didn’t need. Aiden had asked me about that exact conversation when he was writing the page.”</blockquote>
+            <figcaption>Jason M.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="4 of 5" aria-hidden="true" inert>
+            <blockquote>“I kept putting this off because I thought I’d have to sit down and write everything first. Aiden asked me questions over the phone and used my answers for the draft. I checked the roofing details, we made a few changes, and it was ready. It fit around work.”</blockquote>
+            <figcaption>Brian C.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="5 of 5" aria-hidden="true" inert>
+            <blockquote>“The first draft sounded a little too formal for us. I told Aiden, and he changed it. We’re a small outfit, and I’m usually the guy answering the phone. The site sounds like that now. It also explains our cleanup and inspection process instead of just saying we do quality work.”</blockquote>
+            <figcaption>Eric L.</figcaption>
+          </figure>
+        </div>
       </div>
       <div class="controls">
-        <button type="button" class="arrow" id="prev" aria-label="Previous sample"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <span class="count" id="count" aria-hidden="true">1 of 5</span>
-        <button type="button" class="arrow" id="nextS" aria-label="Next sample"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="arrow" id="prev" aria-label="Previous testimonial" aria-controls="track" aria-disabled="true">←</button>
+        <button type="button" class="arrow" id="nextQuote" aria-label="Next testimonial" aria-controls="track">→</button>
       </div>
-      <div class="dots" id="dots"></div>
-      <div class="sr" aria-live="polite" id="announce"></div>
+      <span class="sr" aria-live="polite" aria-atomic="true" id="announce"></span>
     </div>
   </div>
 </section>
@@ -241,7 +248,7 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
   <div class="wrap split">
     <div>
       <h2>The free 20-minute call</h2>
-      <p class="lede">We look at your audit and your site together. You leave with something useful whether we work together or not.</p>
+      <p class="lede">We’ll open your site together and look at what a homeowner sees when they try to get an estimate.</p>
     </div>
     <ul class="list">
       <li><h3>Your top three fixes, in writing</h3><p>The changes most likely to bring in more estimate requests, in the order I'd make them.</p></li>
@@ -257,7 +264,7 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
     <ul class="list">
       <li><h3>Your design stays</h3><p>I rewrite the pages you already have. No rebuild, no new website.</p></li>
       <li><h3>On time, or you don't pay</h3><p>Delivered by the date we agree on, with 30 days of revisions after that.</p></li>
-      <li><h3>Two new clients a month</h3><p>I write every word myself, so I keep the number small.</p></li>
+      <li><h3>I take on two new clients a month</h3><p>I write every word myself, so I keep the number small.</p></li>
     </ul>
   </div>
 </section>
@@ -283,7 +290,7 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
   </div>
 </section>
 
-<footer><div class="wrap">Aiden McBroom · Cambridge, Massachusetts · aidenmcbroom@college.harvard.edu</div></footer>
+<footer><div class="wrap">Aiden McBroom · Cambridge, Massachusetts · <a href="mailto:aidenmcbroom@college.harvard.edu">aidenmcbroom@college.harvard.edu</a></div></footer>
 
 <script>
 {
@@ -317,7 +324,9 @@ const jobsTxt=n=>n<1?String(Math.round(n*10)/10):String(Math.round(n*2)/2);
 const arr='<span class="arr" aria-hidden="true">→</span>';
 const chk='<svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>';
 
+let advanceTimer;
 function renderQ(){
+  clearTimeout(advanceTimer);
   const q=Q[cur], a=ans[q.id];
   prog.style.width=(cur/Q.length*100)+'%'; stepEl.textContent=(cur+1)+' of '+Q.length; backBtn.hidden=cur===0;
   pane.innerHTML='<h2 class="q" tabindex="-1" id="qh">'+esc(q.t)+'</h2><div class="opts" role="group" aria-labelledby="qh">'+
@@ -329,7 +338,7 @@ function renderQ(){
     if(q.multi){let s=ans[q.id]||[];
       if(i===q.none) s=s.includes(i)?[]:[i]; else {s=s.filter(x=>x!==q.none); s=s.includes(i)?s.filter(x=>x!==i):s.concat(i);}
       ans[q.id]=s; renderQ();}
-    else{ans[q.id]=i; renderQ(); setTimeout(next,180);}
+    else{ans[q.id]=i; renderQ(); advanceTimer=setTimeout(next,180);}
   });
   const n=document.getElementById('next'); if(n) n.onclick=next;
 }
@@ -412,45 +421,52 @@ function mailForm(){
 document.getElementById('startAgain').onclick=e=>{e.preventDefault();document.getElementById('audit').scrollIntoView({block:'start'});const b=pane.querySelector('button');if(b)b.focus({preventScroll:true});};
 renderQ();
 
-// ---------- samples carousel (manual, accessible) ----------
-const SAMPLES=[
- {kind:'Homepage headline',co:'Hollis Peak Roofing',html:'<p><strong>A new roof in one day, with a written price before we climb a ladder.</strong></p><p class="smalltxt">Most homeowners call three roofers and get three different stories. We give you one written estimate, line by line, and if something changes once the old roof is off, you see a photo and a price first.</p>'},
- {kind:'Service area line',co:'Ostrander Brothers Roofing',html:'<p>We replace and repair roofs in Larkmoor, Fenwick Hollow, Brightwater and every town within 25 miles of them.</p><p class="smalltxt">Not sure if that includes you? Text your ZIP code to (555) 014-2290 and we’ll tell you the same day.</p>'},
- {kind:'Repair or replace page',co:'Copperline Roofing',html:'<p>If your roof is under 15 years old and the damage is in one spot, we’ll tell you to repair it, even though a replacement pays us more.</p><p class="smalltxt">We recommend a new roof when the decking is soft in more than one area, when shingles are curling across whole slopes, or when you’ve patched the same leak twice.</p>'},
- {kind:'Follow-up email, 3 days after an estimate',co:'Copperline Roofing',html:'<p>Hi Dana, most homeowners ask us the same three things after an estimate. Yes, you can spread the cost over 12 to 60 months. Most homes take one day. And if rain is coming, we cover anything open before we leave.</p><p class="smalltxt">If you’d like to pick a date, just reply to this email. Marcus</p>'},
- {kind:'Missed-call text',co:'Hollis Peak Roofing',html:'<p>Sorry we missed you. This is Marcus at Hollis Peak. I’m up on a roof right now.</p><p class="smalltxt">Reply with your address and what’s going on, and I’ll call you back within the hour.</p>'}
-];
-const track=document.getElementById('track'), vp=document.getElementById('vp'), prevB=document.getElementById('prev'), nextB=document.getElementById('nextS'),
-      countEl=document.getElementById('count'), dotsEl=document.getElementById('dots'), announce=document.getElementById('announce');
-const N=SAMPLES.length; let si=0;
-const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-track.innerHTML=SAMPLES.map((s,i)=>'<div class="slide" role="group" aria-roledescription="slide" aria-label="'+(i+1)+' of '+N+'"><div class="card"><div class="kind"><b>'+esc(s.kind)+'</b><span>For '+esc(s.co)+' (fictional)</span></div><div class="copy">'+s.html+'</div></div></div>').join('');
-dotsEl.innerHTML=SAMPLES.map((s,i)=>'<button type="button" class="dot" data-i="'+i+'" aria-label="Show sample '+(i+1)+', '+esc(s.kind)+'"><span></span></button>').join('');
-const slides=[...track.children], dots=[...dotsEl.children];
-function show(k,announceIt){
-  k=Math.max(0,Math.min(N-1,k));
-  if(k===si&&announceIt) return;
-  si=k;
-  track.style.transition=reduce.matches?'none':'';
-  track.style.transform='translateX('+(-si*100)+'%)';
-  slides.forEach((s,j)=>{const on=j===si; s.inert=!on; s.setAttribute('aria-hidden',String(!on));});
-  dots.forEach((d,j)=>d.setAttribute('aria-current',String(j===si)));
-  countEl.textContent=(si+1)+' of '+N;
-  prevB.setAttribute('aria-disabled',String(si===0));
-  nextB.setAttribute('aria-disabled',String(si===N-1));
-  if(announceIt) announce.textContent='Sample '+(si+1)+' of '+N+': '+SAMPLES[si].kind;
+// Testimonials advance only when the reader chooses.
+const track = document.getElementById('track');
+const slides = Array.from(track.children);
+const viewport = document.getElementById('vp');
+const previous = document.getElementById('prev');
+const following = document.getElementById('nextQuote');
+const count = document.getElementById('count');
+const announcement = document.getElementById('announce');
+let current = 0;
+
+function showQuote(index) {
+  if (index < 0 || index >= slides.length || index === current) return;
+  current = index;
+  track.style.transform = 'translateX(' + (-100 * index) + '%)';
+  slides.forEach((slide, i) => {
+    slide.inert = i !== index;
+    slide.setAttribute('aria-hidden', String(i !== index));
+  });
+  previous.setAttribute('aria-disabled', String(index === 0));
+  following.setAttribute('aria-disabled', String(index === slides.length - 1));
+  count.textContent = (index + 1) + ' of ' + slides.length;
+  announcement.textContent = count.textContent + '. ' + slides[index].innerText;
 }
-prevB.onclick=()=>{if(si>0) show(si-1,true);};
-nextB.onclick=()=>{if(si<N-1) show(si+1,true);};
-dots.forEach(d=>d.onclick=()=>show(+d.dataset.i,true));
-let sx=null, sy=null;
-vp.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')return; sx=e.clientX; sy=e.clientY;},{passive:true});
-vp.addEventListener('pointerup',e=>{
-  if(sx===null)return; const dx=e.clientX-sx, dy=e.clientY-sy; sx=sy=null;
-  if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.2){ if(dx<0&&si<N-1) show(si+1,true); else if(dx>0&&si>0) show(si-1,true); }
+previous.onclick = () => showQuote(current - 1);
+following.onclick = () => showQuote(current + 1);
+document.querySelector('.carousel').addEventListener('keydown', event => {
+  if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+  event.preventDefault();
+  showQuote(current + (event.key === 'ArrowRight' ? 1 : -1));
 });
-vp.addEventListener('pointercancel',()=>{sx=sy=null;});
-show(0,false);
+let touchStart = null;
+viewport.addEventListener('pointerdown', event => {
+  if (event.pointerType === 'touch' && event.isPrimary) {
+    touchStart = {x: event.clientX, y: event.clientY};
+  }
+});
+viewport.addEventListener('pointercancel', () => { touchStart = null; });
+viewport.addEventListener('pointerup', event => {
+  if (!touchStart || !event.isPrimary) return;
+  const dx = event.clientX - touchStart.x;
+  const dy = event.clientY - touchStart.y;
+  touchStart = null;
+  if (Math.abs(dx) > 40 && Math.abs(dx) > 1.2 * Math.abs(dy)) {
+    showQuote(current + (dx < 0 ? 1 : -1));
+  }
+});
 }
 </script>
 </body>
