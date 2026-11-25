@@ -52,12 +52,17 @@ a{color:var(--accent-ink)}
 /* hero */
 .hero{padding:var(--s6) 0 var(--s7)}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:var(--s6);align-items:start}
-.hero h1{margin-bottom:var(--s4)}
+.hero h1{margin-bottom:var(--s4);font-size:clamp(40px,4.4vw,60px)}
 .lede{font-size:19px;color:var(--muted);max-width:34ch}
 .hero .lede{max-width:38ch}
 .audit-label{display:flex;align-items:center;gap:12px;color:var(--accent-ink);font-weight:700;font-size:16px;margin-bottom:22px}
 .audit-label::before{content:"";width:32px;height:3px;background:currentColor}
 .hero-note{color:var(--soft);font-size:15px;margin-top:24px}
+.hero-acts{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s4)}
+.offer{background:#fff;border-top:3px solid var(--ink);padding:clamp(20px,3vw,36px)}
+.offer .ticks{margin-bottom:var(--s3)}
+.offer .ticks li{font-size:17px}
+.audit-band{border-top:1px solid var(--line)}
 /* audit card */
 .card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:var(--s5)}
 .audit{background:#fff;border-top:3px solid var(--ink);padding:clamp(20px,3vw,36px)}
@@ -184,8 +189,8 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
     <a class="brand" href="#">Aiden McBroom<span>Website copy for roofing companies</span></a>
     <nav aria-label="Main">
       <a class="plain" href="#testimonials">Testimonials</a>
-      <a class="plain" href="#call">The free call</a>
-      <a class="btn small" href="https://calendly.com/aidenmcbroom-college/roofing-discovery-call" target="_top">Book a call</a>
+      <a class="plain" href="#call">The free review</a>
+      <a class="btn small" href="https://calendly.com/aidenmcbroom-college/roofing-discovery-call" target="_top">Book a review</a>
     </nav>
   </div>
 </header>
@@ -194,10 +199,34 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
 <section class="hero">
   <div class="wrap">
     <div>
-      <p class="audit-label">Free roofing website audit</p>
-      <h1>Would a homeowner call you for an estimate?</h1>
-      <p class="lede">Answer nine questions about your website and how you follow up. You’ll get a score, an estimate of what missed jobs could be worth, and one thing to fix first.</p>
-      <p class="hero-note">About 90 seconds · Results on screen</p>
+      <p class="audit-label">Website copy for roofing companies</p>
+      <h1>Website copy for roofers who want more replacement estimates.</h1>
+      <p class="lede">Tell me what homeowners ask you on the phone. I’ll turn your answers into a homepage, a replacement page, and three follow-up emails your office can use.</p>
+      <div class="hero-acts">
+        <a class="btn" href="https://calendly.com/aidenmcbroom-college/roofing-discovery-call" target="_top">Book a free 20-minute review <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="#audit-section">Take the website audit</a>
+      </div>
+      <p class="hero-note">First draft within five business days of your interview · Your design stays</p>
+    </div>
+    <div class="card offer">
+      <h2 class="q">What you get</h2>
+      <ul class="ticks">
+        <li><svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>One 25-minute interview with whoever answers your phone</li>
+        <li><svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>Homepage copy</li>
+        <li><svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>One roof-replacement service page</li>
+        <li><svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>Three emails your office sends after an estimate</li>
+        <li><svg width="20" height="20" aria-hidden="true"><use href="#chk"/></svg>A page-by-page handoff for your web person</li>
+      </ul>
+      <p class="note">You or your web person publishes the words. I hand them over section by section, ready to paste.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band audit-band" id="audit-section">
+  <div class="wrap split">
+    <div>
+      <h2>Free website audit</h2>
+      <p class="lede">Nine questions about your website and how you follow up. You’ll get a grade in four areas and one thing to fix first. About 90 seconds, results on screen.</p>
     </div>
     <div class="card audit" id="audit">
       <div class="top"><button type="button" class="back" id="back" hidden>← Back</button><div class="bar" aria-hidden="true"><i id="prog"></i></div><span id="step">1 of 9</span></div>
@@ -247,7 +276,7 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
 <section class="band" id="call">
   <div class="wrap split">
     <div>
-      <h2>The free 20-minute call</h2>
+      <h2>The free 20-minute review</h2>
       <p class="lede">We’ll open your site together and look at what a homeowner sees when they try to get an estimate.</p>
     </div>
     <ul class="list">
@@ -263,6 +292,7 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
     <div><h2>If we work together</h2></div>
     <ul class="list">
       <li><h3>Your design stays</h3><p>I rewrite the pages you already have. No rebuild, no new website.</p></li>
+      <li><h3>First draft in five business days</h3><p>Counted from your interview and the materials we agree on. We put the exact date in writing.</p></li>
       <li><h3>On time, or you don't pay</h3><p>Delivered by the date we agree on, with 30 days of revisions after that.</p></li>
       <li><h3>I take on two new clients a month</h3><p>I write every word myself, so I keep the number small.</p></li>
     </ul>
@@ -280,12 +310,12 @@ footer{padding:var(--s5) 0;font-size:14px;color:var(--soft)}
 <section class="closing">
   <div class="wrap">
     <div>
-      <h2>See where your site stands</h2>
-      <p>Free, about 90 seconds, results on screen.</p>
+      <h2>Talk it through in 20 minutes</h2>
+      <p>Free. We open your site together, and you leave with three changes.</p>
     </div>
     <div class="acts">
-      <a class="btn" href="#audit" id="startAgain">Start the audit <span class="arr" aria-hidden="true">→</span></a>
-      <a class="btn ghost" href="https://calendly.com/aidenmcbroom-college/roofing-discovery-call" target="_top">Book a call</a>
+      <a class="btn" href="https://calendly.com/aidenmcbroom-college/roofing-discovery-call" target="_top">Book a free review <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn ghost" href="#audit-section" id="startAgain">Take the audit</a>
     </div>
   </div>
 </section>
@@ -310,7 +340,7 @@ const Q = [
 ];
 const VIS=[200,650,2000,4000,500], REQ=[3,10,28,50], JOB=[7000,10000,15000,21500,28000], CLOSE=[.15,.275,.425,.55,.25], CAP=250000;
 const LEVERS={
- result:{n:'Headline',fix:'Change your homepage headline to what the homeowner gets and how fast, like "A new roof in one day."'},
+ result:{n:'Headline',fix:'Change your homepage headline to what the homeowner gets and how long it really takes, using your own install timeline.'},
  proof:{n:'Proof',fix:'Put your star rating, three photos of your own jobs and your warranty at the top of your homepage.'},
  wait:{n:'Speed',fix:'Reply to every request within the hour, and send one written follow-up 3 days after each estimate.'},
  hassle:{n:'Ease',fix:'Cut your estimate form to name, phone and address, and let people text you.'}
@@ -371,28 +401,34 @@ function payload(extra){
   return Object.assign(row,{est_gap_low:Math.round(R.low),est_gap_high:Math.round(R.high),top_lever:LEVERS[R.weakest].n,
     lever_scores:Object.keys(R.s).map(k=>LEVERS[k].n+' '+R.s[k]+'/10').join('; ')},extra||{});
 }
+// Resolves true only when the collector confirms it saved the row ({ok:true}).
 function save(row){
-  try{ if(ENDPOINT) fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(row)}).catch(()=>{}); }catch(e){}
+  if(!ENDPOINT) return Promise.resolve(false);
+  try{
+    return fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(row)})
+      .then(r=>r.ok?r.json():null).then(j=>!!(j&&j.ok)).catch(()=>false);
+  }catch(e){ return Promise.resolve(false); }
 }
 function report(){
   R=compute(); save(payload());
   const L=LEVERS[R.weakest], order=['result','proof','wait','hassle'];
   prog.style.width='100%'; stepEl.textContent='Your results'; backBtn.hidden=true;
   pane.innerHTML=
-   '<div class="cost"><div class="lab" tabindex="-1" id="qh">What your website may be costing you each year</div>'+
-     '<div class="big">'+money(R.low)+'–'+money(R.high)+'</div>'+
-     '<p class="sub">About '+jobsTxt(R.low/12/R.job)+' to '+jobsTxt(R.high/12/R.job)+' roof jobs a month.</p>'+
-     '<details class="math"><summary>How this was worked out</summary><table><tbody>'+
-       [['Visitors a month',R.vis.toLocaleString()],['Requests a month',R.req],['Typical job',money(R.job)],['Close rate',Math.round(R.close*100)+'%'],
-        ['Extra requests if the site improves',R.lo.extraReq.toFixed(1)+' to '+R.hi.extraReq.toFixed(1)],
-        ['Extra jobs from follow-up',R.auto?'none, already automatic':R.lo.fuJobs.toFixed(2)+' to '+R.hi.fuJobs.toFixed(2)]]
-       .map(x=>'<tr><td>'+esc(x[0])+'</td><td>'+esc(x[1])+'</td></tr>').join('')+'</tbody></table>'+
-       '<p>An estimate from your answers, capped at '+money(CAP)+' a year. Not a promise.</p></details></div>'+
-   '<div class="grades" aria-label="Your grades">'+order.map(k=>'<div class="g'+(k===R.weakest?' weak':'')+'"><b>'+LEVERS[k].n+'</b><div class="meter"><i data-w="'+R.s[k]*10+'"></i></div><span class="n">'+R.s[k]+'/10</span></div>').join('')+'</div>'+
+   '<h2 class="q" tabindex="-1" id="qh">Your grades</h2>'+
+   '<div class="grades" style="margin-top:0" aria-label="Your grades">'+order.map(k=>'<div class="g'+(k===R.weakest?' weak':'')+'"><b>'+LEVERS[k].n+'</b><div class="meter"><i data-w="'+R.s[k]*10+'"></i></div><span class="n">'+R.s[k]+'/10</span></div>').join('')+'</div>'+
    '<div class="fix"><div class="lab">Fix this first</div><p>'+esc(L.fix)+'</p></div>'+
-   '<div class="next"><h3>Get the rest on a free 20-minute call</h3>'+
+   '<div class="cost mt"><div class="lab">Illustration only: what missed jobs could be worth each year</div>'+
+     '<div class="big">'+money(R.low)+'–'+money(R.high)+'</div>'+
+     '<p class="sub">Roughly '+jobsTxt(R.low/12/R.job)+' to '+jobsTxt(R.high/12/R.job)+' roof jobs a month, if the assumptions below hold for your business.</p>'+
+     '<details class="math"><summary>The assumptions behind this</summary><table><tbody>'+
+       [['Visitors a month',R.vis.toLocaleString()],['Requests a month',R.req],['Typical job',money(R.job)],['Close rate',Math.round(R.close*100)+'%'],
+        ['Extra requests if the site improves (assumed)',R.lo.extraReq.toFixed(1)+' to '+R.hi.extraReq.toFixed(1)],
+        ['Extra jobs from follow-up (assumed)',R.auto?'none, already automatic':R.lo.fuJobs.toFixed(2)+' to '+R.hi.fuJobs.toFixed(2)]]
+       .map(x=>'<tr><td>'+esc(x[0])+'</td><td>'+esc(x[1])+'</td></tr>').join('')+'</tbody></table>'+
+       '<p>Built from your answers plus assumed improvement rates, capped at '+money(CAP)+' a year. It is not a measurement of your business and not a promise.</p></details></div>'+
+   '<div class="next"><h3>Get the rest on a free 20-minute review</h3>'+
      '<ul class="ticks"><li>'+chk+'Your top three fixes, in writing</li><li>'+chk+'A follow-up email for open estimates</li><li>'+chk+'A straight answer on what your site needs</li></ul>'+
-     '<a class="btn wide" target="_top" id="book" href="'+CALL+'">Book my free call '+arr+'</a>'+
+     '<a class="btn wide" target="_top" id="book" href="'+CALL+'">Book my free review '+arr+'</a>'+
      '<div class="mail" id="mail"><button type="button" class="link" id="openmail">Or get these results by email</button></div>'+
      '<button type="button" class="link" id="redo" style="font-size:14px;color:var(--soft)">Start over</button></div>';
   requestAnimationFrame(()=>requestAnimationFrame(()=>pane.querySelectorAll('.meter i').forEach(m=>m.style.width=m.dataset.w+'%')));
@@ -413,12 +449,18 @@ function mailForm(){
     const v=id=>document.getElementById(id).value.trim(), c={name:v('fn'),email:v('fe'),website:v('fw')}, err=document.getElementById('ferr');
     if(!c.name||!c.email){err.textContent='Add your name and email.';return;}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(c.email)){err.textContent='Check your email address.';return;}
-    save(payload(c));
-    document.getElementById('book').href=CALL+'?name='+encodeURIComponent(c.name)+'&email='+encodeURIComponent(c.email)+'&a1='+encodeURIComponent('Audit: fix first = '+LEVERS[R.weakest].n+'. Gap '+money(R.low)+' to '+money(R.high)+'. Site: '+(c.website||'not given'));
-    m.innerHTML='<p style="margin-top:var(--s3)"><b>Got it.</b> Your results are on their way to '+esc(c.email)+' within a day.</p>';
+    const btn=e.target.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Saving…'; err.textContent='';
+    save(payload(c)).then(ok=>{
+      if(ok){
+        m.innerHTML='<p style="margin-top:var(--s3)"><b>Saved.</b> I’ll email your results to '+esc(c.email)+' myself, usually within two business days. They stay on this screen until you leave.</p>';
+      }else{
+        btn.disabled=false; btn.innerHTML='Email me my results '+arr;
+        err.innerHTML='That didn’t go through. Your results are still on this screen, or email me at <a href="mailto:aidenmcbroom@college.harvard.edu">aidenmcbroom@college.harvard.edu</a>.';
+      }
+    });
   };
 }
-document.getElementById('startAgain').onclick=e=>{e.preventDefault();document.getElementById('audit').scrollIntoView({block:'start'});const b=pane.querySelector('button');if(b)b.focus({preventScroll:true});};
+document.getElementById('startAgain').onclick=e=>{e.preventDefault();document.getElementById('audit-section').scrollIntoView({block:'start'});const b=pane.querySelector('button');if(b)b.focus({preventScroll:true});};
 renderQ();
 
 // Testimonials advance only when the reader chooses.
